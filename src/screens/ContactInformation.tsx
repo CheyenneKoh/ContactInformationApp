@@ -58,13 +58,28 @@ export const ContactInformation = ({
   });
 
   const handleOnPressSaveChanges = handleSubmit(formData => {
-    if (isDirty && contact) {
-      contact.firstName = formData.firstName;
-      contact.lastName = formData.lastName;
-      contact.email = formData.email;
-      contact.phone = formData.phone;
-
-      queryClient.setQueryData([QUERY_KEYS.contacts], contacts);
+    if (isDirty && contacts) {
+      if (contact) {
+        contact.firstName = formData.firstName;
+        contact.lastName = formData.lastName;
+        contact.email = formData.email;
+        contact.phone = formData.phone;
+        queryClient.setQueryData([QUERY_KEYS.contacts], contacts);
+      } else {
+        queryClient.setQueryData(
+          [QUERY_KEYS.contacts],
+          [
+            {
+              id: new Date().getTime(),
+              firstName: formData.firstName,
+              lastName: formData.lastName,
+              email: formData.email,
+              phone: formData.phone,
+            },
+            ...contacts,
+          ],
+        );
+      }
 
       resetForm(getValues());
     }
@@ -187,13 +202,6 @@ export const ContactInformation = ({
                 <Controller
                   control={control}
                   name="phone"
-                  rules={{
-                    pattern: {
-                      value:
-                        /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/,
-                      message: 'Invalid phone number',
-                    },
-                  }}
                   render={({field: {value, onChange}, fieldState: {error}}) => {
                     return (
                       <FormControl

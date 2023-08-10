@@ -28,6 +28,10 @@ export const ContactsList = ({navigation}: ContactsListProps) => {
     navigation.navigate('ContactInformation', {contactId});
   };
 
+  const handleOnPressAddContact = () => {
+    navigation.navigate('ContactInformation', {});
+  };
+
   return (
     <View style={styles.screen}>
       <AppHeader
@@ -43,7 +47,7 @@ export const ContactsList = ({navigation}: ContactsListProps) => {
           {
             key: 'add',
             Icon: IconAdd,
-            onPress: () => console.log('Add'),
+            onPress: handleOnPressAddContact,
           },
         ]}
       />
