@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
     paddingVertical: spacing[4],
     backgroundColor: colors.white,
     zIndex: 1000,
+    elevation: 8,
   },
   appHeaderRow: {
     flexDirection: 'row',
