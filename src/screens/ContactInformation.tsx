@@ -7,7 +7,7 @@ import {FormControl} from 'components/FormControl';
 import {FormFieldLabel} from 'components/FormFieldLabel';
 import {useContacts} from 'hooks/useContacts';
 import {AppStackParamList} from 'models/Navigation';
-import React from 'react';
+import React, {useRef} from 'react';
 import {Controller, useForm} from 'react-hook-form';
 import {
   KeyboardAvoidingView,
@@ -17,6 +17,7 @@ import {
   Text,
   View,
 } from 'react-native';
+import {TextInput} from 'react-native-gesture-handler';
 import {convertHexToRGBA} from 'services/ColorService';
 import {QUERY_KEYS, queryClient} from 'services/QueryClientService';
 import {colors, spacing, typography} from 'theme/tokens';
@@ -37,6 +38,10 @@ export const ContactInformation = ({
   navigation,
   route,
 }: ContactInformationProps) => {
+  const lastNameRef = useRef<TextInput>(null);
+  const emailRef = useRef<TextInput>(null);
+  const phoneRef = useRef<TextInput>(null);
+
   const {data: contacts} = useContacts();
 
   const contactId = route.params.contactId;
@@ -137,6 +142,9 @@ export const ContactInformation = ({
                         value={value}
                         onChangeText={onChange}
                         error={error}
+                        onSubmitEditing={() => {
+                          lastNameRef.current?.focus();
+                        }}
                       />
                     );
                   }}
@@ -157,10 +165,14 @@ export const ContactInformation = ({
                   render={({field: {value, onChange}, fieldState: {error}}) => {
                     return (
                       <FormControl
+                        inputRef={lastNameRef}
                         type="text"
                         value={value}
                         onChangeText={onChange}
                         error={error}
+                        onSubmitEditing={() => {
+                          emailRef.current?.focus();
+                        }}
                       />
                     );
                   }}
@@ -187,10 +199,14 @@ export const ContactInformation = ({
                   render={({field: {value, onChange}, fieldState: {error}}) => {
                     return (
                       <FormControl
+                        inputRef={emailRef}
                         type="email"
                         value={value}
                         onChangeText={onChange}
                         error={error}
+                        onSubmitEditing={() => {
+                          phoneRef.current?.focus();
+                        }}
                       />
                     );
                   }}
@@ -205,6 +221,7 @@ export const ContactInformation = ({
                   render={({field: {value, onChange}, fieldState: {error}}) => {
                     return (
                       <FormControl
+                        inputRef={phoneRef}
                         type="phone"
                         value={value}
                         onChangeText={onChange}

@@ -15,9 +15,15 @@ type InputType =
 type FormControlProps = TextInputProps & {
   type: InputType;
   error?: FieldError;
+  inputRef?: React.RefObject<TextInput>;
 };
 
-export function FormControl({type, error, ...props}: FormControlProps) {
+export function FormControl({
+  type,
+  error,
+  inputRef,
+  ...props
+}: FormControlProps) {
   const [isFocused, setIsFocused] = useState(false);
 
   const handleOnFocus = () => setIsFocused(true);
@@ -50,13 +56,15 @@ export function FormControl({type, error, ...props}: FormControlProps) {
         Boolean(error) && styles.inputContainerError,
       ]}>
       <TextInput
+        ref={inputRef}
         style={[styles.inputText, Boolean(error) && styles.inputTextError]}
         keyboardType={getKeyboardType}
-        clearButtonMode="never"
         autoCapitalize={type === 'email' ? 'none' : props.autoCapitalize}
         numberOfLines={1}
         onFocus={handleOnFocus}
         onBlur={handleOnBlur}
+        returnKeyType="next"
+        blurOnSubmit={false}
         {...props}
       />
     </View>
