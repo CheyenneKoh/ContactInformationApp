@@ -25,7 +25,7 @@ export const AppHeader = ({
   const insets = useSafeAreaInsets();
 
   return (
-    <View style={[styles.appHeader, {paddingTop: insets.top + spacing[2]}]}>
+    <View style={[styles.appHeader, {paddingTop: insets.top + spacing[4]}]}>
       <View style={styles.appHeaderRow}>
         <View style={styles.headerActions}>
           {leftActions?.map(({key, Icon, onPress}) => (

@@ -31,7 +31,7 @@ export const SearchBar = ({onChangeText, onPressBack}: SearchBarProps) => {
 
   return (
     <View
-      style={[styles.searchBarHeader, {paddingTop: insets.top + spacing[2]}]}>
+      style={[styles.searchBarHeader, {paddingTop: insets.top + spacing[4]}]}>
       <View style={styles.searchBarHeaderRow}>
         <Pressable
           style={styles.headerButton}
