@@ -18,6 +18,12 @@ function getContacts() {
   });
 }
 
+/**
+ * Hook that retrieves the list of contacts from a mock api endpoint using React Query
+ *
+ * @see https://tanstack.com/query/v3/docs/react/guides/queries#query-basics
+ */
+
 export function useContacts() {
   return useQuery([QUERY_KEYS.contacts], getContacts, {staleTime: Infinity});
 }
