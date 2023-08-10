@@ -59,7 +59,6 @@ export const AppHeader = ({
 
 const styles = StyleSheet.create({
   appHeader: {
-    width: '100%',
     paddingVertical: spacing[4],
     backgroundColor: colors.white,
     zIndex: 1000,
@@ -84,9 +83,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: typography.title.medium,
     fontWeight: 'bold',
-    color: 'black',
+    color: colors.black,
     letterSpacing: 0.25,
-    flex: 1,
-    textAlign: 'center',
   },
 });

@@ -251,7 +251,6 @@ const styles = StyleSheet.create({
   },
   formFieldRow: {
     flexDirection: 'row',
-    justifyContent: 'flex-start',
     alignItems: 'center',
     paddingHorizontal: spacing[4],
     gap: spacing[3],

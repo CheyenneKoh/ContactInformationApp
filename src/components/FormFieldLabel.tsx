@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text} from 'react-native';
-import {colors, typography} from 'theme/tokens';
+import {colors} from 'theme/tokens';
 
 type FormFieldLabelProps = {
   text: string;
@@ -13,7 +13,6 @@ export const FormFieldLabel = ({text}: FormFieldLabelProps) => {
 const styles = StyleSheet.create({
   label: {
     color: colors.black,
-    fontSize: typography.base.body,
     fontWeight: 'bold',
     width: '20%',
   },

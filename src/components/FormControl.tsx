@@ -1,8 +1,7 @@
 import React, {useMemo, useState} from 'react';
 import {FieldError} from 'react-hook-form';
 import {StyleSheet, TextInput, TextInputProps, View} from 'react-native';
-import {colors, spacing, typography} from 'theme/tokens';
-const INPUT_HEIGHT = 40;
+import {colors, spacing} from 'theme/tokens';
 
 type InputType =
   | 'text'
@@ -71,7 +70,7 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     borderWidth: 1,
     flex: 1,
-    height: INPUT_HEIGHT,
+    height: 40,
   },
   inputContainerFocused: {
     borderColor: colors.primary,
@@ -84,7 +83,6 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 0,
     paddingHorizontal: spacing[4],
-    fontSize: typography.base.body,
     color: colors.black,
   },
   inputTextError: {

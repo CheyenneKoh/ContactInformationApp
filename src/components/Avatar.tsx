@@ -21,7 +21,6 @@ const styles = StyleSheet.create({
     height: AVATAR_SIZE_DEFAULT,
     borderRadius: AVATAR_SIZE_DEFAULT / 2,
     backgroundColor: colors.primary,
-    overflow: 'hidden',
   },
   avatarLarge: {
     width: AVATAR_SIZE_LARGE,

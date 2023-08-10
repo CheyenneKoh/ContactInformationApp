@@ -14,7 +14,7 @@ import {
   Text,
   View,
 } from 'react-native';
-import {colors, spacing, typography} from 'theme/tokens';
+import {colors, spacing} from 'theme/tokens';
 
 type ContactsListProps = NativeStackScreenProps<
   AppStackParamList,
@@ -96,7 +96,6 @@ const styles = StyleSheet.create({
     paddingTop: spacing[10],
   },
   noResultsText: {
-    fontSize: typography.base.body,
     letterSpacing: 0.25,
     color: colors.outline,
   },
