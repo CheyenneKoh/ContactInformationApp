@@ -1,3 +1,22 @@
 {
-  "extends": "@tsconfig/react-native/tsconfig.json"
+  "extends": "@tsconfig/react-native/tsconfig.json",
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitAny": true,
+    "noUncheckedIndexedAccess": true,
+    "strictFunctionTypes": true,
+    "noImplicitThis": true,
+    "baseUrl": "./",
+    "paths": {
+      "components/*": ["src/components/*"],
+      "hooks/*": ["src/hooks/*"],
+      "models/*": ["src/models/*"],
+      "screens/*": ["src/screens/*"],
+      "services/*": ["src/services/*"],
+      "state/*": ["src/state/*"],
+      "theme/*": ["src/theme/*"],
+      "types/*": ["src/types/*"]
+    },
+    "lib": ["ES2021.String"]
+  }
 }
