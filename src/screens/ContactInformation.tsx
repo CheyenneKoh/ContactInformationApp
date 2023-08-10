@@ -112,7 +112,7 @@ export const ContactInformation = ({
         ]}
       />
 
-      <ScrollView contentContainerStyle={styles.screen}>
+      <ScrollView keyboardShouldPersistTaps="handled">
         <View style={styles.container}>
           <View style={styles.avatarContainer}>
             <Avatar size="large" />
