@@ -1,5 +1,6 @@
 import React from 'react';
 import {Pressable, StyleSheet, Text, View} from 'react-native';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {SvgProps} from 'react-native-svg';
 import {colors, spacing, typography} from '../theme/tokens';
 
@@ -21,8 +22,10 @@ export const AppHeader = ({
   leftActions,
   rightActions,
 }: AppHeaderProps) => {
+  const insets = useSafeAreaInsets();
+
   return (
-    <View style={styles.appHeader}>
+    <View style={[styles.appHeader, {paddingTop: insets.top + spacing[2]}]}>
       <View style={styles.appHeaderRow}>
         <View style={styles.headerActions}>
           {leftActions?.map(({key, Icon, onPress}) => (

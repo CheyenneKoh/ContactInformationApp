@@ -2,6 +2,7 @@ import IconArrowBack from '@material-symbols/svg-400/outlined/arrow_back.svg';
 import IconSearch from '@material-symbols/svg-400/outlined/search.svg';
 import React, {useEffect, useRef} from 'react';
 import {Pressable, StyleSheet, TextInput, View} from 'react-native';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {colors, spacing} from 'theme/tokens';
 
 type SearchBarProps = {
@@ -10,6 +11,7 @@ type SearchBarProps = {
 };
 
 export const SearchBar = ({onChangeText, onPressBack}: SearchBarProps) => {
+  const insets = useSafeAreaInsets();
   const searchInputRef = useRef<TextInput>(null);
 
   const handleOnPressBackButton = () => {
@@ -28,7 +30,8 @@ export const SearchBar = ({onChangeText, onPressBack}: SearchBarProps) => {
   }, []);
 
   return (
-    <View style={styles.searchBarHeader}>
+    <View
+      style={[styles.searchBarHeader, {paddingTop: insets.top + spacing[2]}]}>
       <View style={styles.searchBarHeaderRow}>
         <Pressable
           style={styles.headerButton}
