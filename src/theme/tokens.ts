@@ -13,19 +13,12 @@ export const spacing = {
 
 export const colors = {
   primary: '#ff8c00',
-  onPrimary: '#FFFFFF',
-  primaryContainer: '#C6C6CA',
-  onPrimaryContainer: '#00000',
   outline: '#73777F',
-  onSurface: '#1A1C1E',
   surfaceVariant: '#DFE3EB',
   white: '#FFFFFF',
   grey: '#F0F0F0',
   black: '#000000',
   error: '#BA1A1A',
-  onError: '#FFFFFF',
-  errorContainer: '#FFDAD6',
-  onErrorContainer: '#410002',
 };
 
 export const typography = {
@@ -46,5 +39,3 @@ export const typography = {
     small: 16,
   },
 };
-
-export const FONT_FAMILY_HELVETICA_NEUE = 'HelveticaNeue';

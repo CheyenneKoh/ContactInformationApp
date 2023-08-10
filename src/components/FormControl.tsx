@@ -85,11 +85,10 @@ const styles = StyleSheet.create({
     padding: 0,
     paddingHorizontal: spacing[4],
     fontSize: typography.base.body,
-    color: colors.onSurface,
+    color: colors.black,
   },
   inputTextError: {
-    color: colors.onErrorContainer,
-    opacity: 0.5,
+    color: colors.error,
   },
   inputTextDisabled: {
     opacity: 0.5,

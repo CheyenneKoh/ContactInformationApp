@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: typography.base.bodyLarge,
     letterSpacing: 0.25,
-    color: colors.onSurface,
+    color: colors.black,
   },
   nameText: {
     flex: 1,
