@@ -17,6 +17,5 @@ module.exports = {
         extensions: ['.json'],
       },
     ],
-    'react-native-reanimated/plugin', // Must come last
   ],
 };
